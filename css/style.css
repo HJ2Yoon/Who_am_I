@@ -1,7 +1,10 @@
 @import "reset.css";
 @import "variables.css";
 
+/* import font url */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 body {
     display: flex;
@@ -11,6 +14,7 @@ body {
 }
 
 .poster {
+    z-index: 1;
     width: 500px;
     display: flex;
     justify-content: flex-start;
@@ -22,9 +26,43 @@ body {
     font-family: 'Bebas Neue', cursive;
     background-color: var(--poster-color);
 }
-.background {
+.bg-holder {
+    position: relative;
     flex-grow: 1;
-    background: url("images/background-img.jpg") no-repeat center right / 100% 100%;
+    overflow-x: hidden;
+}
+.bg {
+    position: absolute;
+    left: -7.5%;
+}
+.bg-title {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 200px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;  
+}
+
+.parallel-text {
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    bottom: 8%;
+    width: 100%;
+    color: white;
+    border-bottom: 2px solid white;
+}
+.parallel-text p {
+    display: flex;
+    padding: 10px 0;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 40px;
 }
 
 .poster__upper {
